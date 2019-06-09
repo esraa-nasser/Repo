@@ -1,0 +1,36 @@
+#bgimg
+{
+    /* background-image: url("../assets/lauren-mancke-60627-unsplash.jpg"); */
+    /* background-image: url("../assets/corinne-kutz-211251-unsplash.jpg"); */
+    /* background-image: url("../assets/diego-ph-249471-unsplash.jpg");
+  
+  height: 100%;  */
+
+  /* Center and scale the image nicely */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+   */
+   position: relative;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(136, 134, 134, 0.507);
+   background-origin: padding-box;
+}
+
+#bgimg::after
+{
+    content: "";
+    background: url("../assets/background3.jpg");
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    /* opacity: 0.6; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-size: cover;
+}

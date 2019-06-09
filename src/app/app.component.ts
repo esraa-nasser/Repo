@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {HomeWithoutLoginComponent} from './home-without-login/home-without-login.component';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'startProject';
+  constructor( private activatedRoute:ActivatedRoute){ 
+    
+  }
 }

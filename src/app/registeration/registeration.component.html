@@ -1,0 +1,86 @@
+
+<form class="text-center border border-light p-5" [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+  style="width: 30%;margin-left: 35%;border-radius: 10%">
+  <p class="h4 mb-4" style="font-family: 'Times New Roman', Times, serif;color:black;font-size: 35px;margin-top: -30px">Sign up</p>
+   <div class="form-row mb-4">
+    <div class="col">
+      
+      <input placeholder="First name" type="text" [formControl]="getfirstName()" class="form-control"
+        [ngClass]="{ 'is-invalid':getfirstName().errors&& getfirstName().touched }" />
+      <div *ngIf="getfirstName().invalid && getfirstName().touched" class="invalid-feedback">      
+          <p>{{getErrorMsgFirstName()}}</p>     
+      </div>
+    </div>
+    <div class="col">
+      <input placeholder="Last name" type="text" [formControl]="getlastName()" class="form-control"
+        [ngClass]="{ 'is-invalid': getlastName().errors && getlastName().touched }" />    
+        <div *ngIf="getlastName().invalid && getlastName().touched" class="invalid-feedback">
+          <p>{{getErrorMsgLastName()}}</p>
+        </div>
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [formControl]="getBirthDate()" ngbDatepicker [footerTemplate]="footerTemplate" #d="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button" style="background-image: url('./../../assets/calender.png');background-size:23px 28px;background-repeat: no-repeat;width:500%;background-color: white ">                          
+        </button>
+      </div>
+    </div>
+    <ng-template #footerTemplate>
+      <hr class="my-0">
+      <button class="btn btn-sm m-2 float-left" style="background-color: #ef6c00;color: black;border-color: #ef6c00;" (click)="model = today; d.close()">Today</button>
+      <button class="btn btn-sm m-2 float-right" style="background-color: #ef6c00;color: black;border-color: #ef6c00;" (click)="d.close()">Close</button>
+    </ng-template>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <input placeholder="Address" type="text" [formControl]="getAddress()" class="form-control" />
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <input placeholder="Phone No."  [formControl]="getPhoneNo()" class="form-control"
+        [ngClass]="{ 'is-invalid': getPhoneNo().errors&&getPhoneNo().touched }" />
+        <div *ngIf="getPhoneNo().invalid && getPhoneNo().touched" class="invalid-feedback">
+        <p>{{getErrorMsgPhone()}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <input placeholder="Organization" type="text" [formControl]="getorganization()" class="form-control" />
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <input placeholder="Email" type="email" [formControl]="getemail()" class="form-control" [ngClass]="{ 'is-invalid': getemail().errors&&getemail().touched }" />
+        <div *ngIf="getemail().invalid&&getemail().touched" class="invalid-feedback">
+          <p>{{getErrorMsgEmail()}}</p>
+        </div>
+     </div>
+  </div>  
+  <div class="form-row mb-4">
+   
+    <div class="col">
+      <input placeholder="Password" type="password" [formControl]="getpassword()" class="form-control"
+        [ngClass]="{ 'is-invalid': getpassword().errors&& getpassword().touched }" />     
+        <div *ngIf="getpassword().invalid&& getpassword().touched">{{getErrorMsg()}}</div>    
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col">
+      <input placeholder="Confirm Password" type="password" [formControl]="getconfirmpassword()" class="form-control"
+        [ngClass]="{ 'is-invalid':getconfirmpassword().errors&& getconfirmpassword().touched }" />    
+        <div *ngIf="getconfirmpassword().invalid&& getconfirmpassword().touched">
+          <p>{{getErrorMsgConfirm()}}</p>
+        </div> 
+    </div>
+  </div>
+  <div class="form-row mb-4">
+    <div class="col" style="margin-top: 5%">
+      <button style="background-color: #ef6c00;color: black;border-color: #ef6c00;margin-right: 2%" type="submit" class="btn btn-primary">Register</button>    
+      <button style="background-color: black;color: white;border-color: black" type="button" (click)="backtoHome($event)"  class="btn btn-link">Cancel</button>
+    </div>
+  </div>
+</form>

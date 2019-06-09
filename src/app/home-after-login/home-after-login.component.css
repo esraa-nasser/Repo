@@ -1,0 +1,16 @@
+#recommenddiv:hover
+{
+    width: 50%;
+    box-shadow: 5px 8px 10px;
+}
+
+#recommenddiv
+{
+    border-radius: 5%;
+}
+
+#projectbtn:hover
+{
+    box-shadow: 2px 5px 5px 2px rgb(109, 110, 112);
+
+}

@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<form class="text-center border border-light p-5" [formGroup]="registerForm" (ngSubmit)="onSubmit(name.value,email.value,msg.value)"
+  style="width: 30%;margin-left: 35%;border-radius: 10%">
+  <p class="h4 mb-4" style="font-family: 'Times New Roman', Times, serif;color:black;font-size: 30px;margin-top: -30px">Get In Touch With Us</p>
+   <div class="form-row mb-4">
+      <input placeholder="Name" type="text" class="form-control"  #name/>   
+    </div>
+  <div class="form-row mb-4">
+      <input #email placeholder="Email" type="email" [formControl]="getemail()" class="form-control" [ngClass]="{ 'is-invalid': getemail().errors&&getemail().touched }" />
+        <div *ngIf="getemail().invalid&&getemail().touched" class="invalid-feedback">
+          <p>{{getErrorMsgEmail()}}</p>
+        </div>
+  </div> 
+  <div class="form-row mb-4">
+      <textarea #msg placeholder="Wat's On Your Mind ?" class="form-control"></textarea>    
+  </div>  
+  <div class="form-row mb-4" style="margin-left: 54%">
+      <button style="background-color: #ef6c00;color: rgb(255, 255, 255);border-color: #ef6c00;margin-right: 2%" type="submit" class="btn btn-primary">Send Your Message</button>    
+  </div>
+</form>
+<app-footer></app-footer>
