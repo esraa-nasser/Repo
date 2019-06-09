@@ -30,6 +30,7 @@
     "ngx-bootstrap": "^4.2.0",
     "ngx-flip": "^7.0.3",
     "popper.js": "^1.15.0",
+    "querystringify": "^2.1.1",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
